@@ -3,4 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .navbar {
+    margin-bottom: 20px;
+    button {
+      background-color: aliceblue;
+      color: red;
+      margin: 5px;
+      padding: 5px;
+      border-radius: 10px;
+    }
+  }
 }

@@ -36,7 +36,7 @@ export const App = () => {
 
   const pieSeries = [
     {
-      data: [44, 55, 13, 43, 22],
+      series: [44, 55, 13, 43, 22],
     },
   ];
 
@@ -67,7 +67,6 @@ export const App = () => {
     <div className="App">
       <h1>Apex Chart with Navbar</h1>
       <nav className="navbar">
-        <button onClick={() => setType("radar")}>Radar</button>
         <button onClick={() => setType("donut")}>Donut</button>
         <button onClick={() => setType("area")}>Area</button>
         <button onClick={() => setType("histogram")}>Histogram</button>
@@ -75,6 +74,7 @@ export const App = () => {
         <button onClick={() => setType("radialBar")}>Radial Bar</button>
         <button onClick={() => setType("bar")}>Bar</button>
         <button onClick={() => setType("scatter")}>Scatter</button>
+        <button onClick={() => setType("radar")}>Radar</button>
         <button onClick={() => setType("bubble")}>Bubble</button>
         <button onClick={() => setType("heatmap")}>Heatmap</button>
         <button onClick={() => setType("candleStick")}>Candle Stick</button>
