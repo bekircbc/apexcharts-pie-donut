@@ -1,10 +1,11 @@
 import Chart from "react-apexcharts";
 import { useState, useEffect } from "react";
+import "./App.scss";
 
 export const App = () => {
   const [options, setOptions] = useState({});
   const [series, setSeries] = useState([]);
-  const [type, setType] = useState("bar");
+  const [type, setType] = useState("radar");
 
   const lineOptions = {
     chart: {
@@ -35,23 +36,28 @@ export const App = () => {
 
   const pieSeries = [
     {
-      name: "series",
       data: [44, 55, 13, 43, 22],
     },
   ];
 
   useEffect(() => {
-    if (type === ("line" || "bar" || "radar" || "area" || "heatmap")) {
+    if (
+      type === "bar" ||
+      type === "line" ||
+      type === "radar" ||
+      type === "area" ||
+      type === "heatmap"
+    ) {
       setOptions(lineOptions), setSeries(lineSeries);
     } else if (
-      type ===
-      ("donut" ||
-        "histogram" ||
-        "pie" ||
-        "radialBar" ||
-        "scatter" ||
-        "bubble" ||
-        "candleStick")
+      type === "donut" ||
+      type === "histogram" ||
+      type === "pie" ||
+      type === "radialBar" ||
+      type === "scatter" ||
+      type === "bubble" ||
+      type === "candleStick" ||
+      type === "polarArea"
     ) {
       setOptions(pieOptions), setSeries(pieSeries);
     }
@@ -61,26 +67,27 @@ export const App = () => {
     <div className="App">
       <h1>Apex Chart with Navbar</h1>
       <nav className="navbar">
-        <button onClick={() => setType("bar")}>Bar</button>
-        <button onClick={() => setType("line")}>Line</button>
         <button onClick={() => setType("radar")}>Radar</button>
         <button onClick={() => setType("donut")}>Donut</button>
         <button onClick={() => setType("area")}>Area</button>
         <button onClick={() => setType("histogram")}>Histogram</button>
         <button onClick={() => setType("pie")}>Pie</button>
         <button onClick={() => setType("radialBar")}>Radial Bar</button>
+        <button onClick={() => setType("bar")}>Bar</button>
         <button onClick={() => setType("scatter")}>Scatter</button>
         <button onClick={() => setType("bubble")}>Bubble</button>
         <button onClick={() => setType("heatmap")}>Heatmap</button>
         <button onClick={() => setType("candleStick")}>Candle Stick</button>
+        <button onClick={() => setType("polarArea")}>Polar Area</button>
+        <button onClick={() => setType("line")}>Line</button>
       </nav>
 
       <Chart
         options={options}
         series={series}
         type={type} //"bar","line", "donut","area", "radar", "histogram", "pie", "radialBar", scatter, bubble, heatmap, candlestick
-        width={500}
-        height={350}
+        width={800}
+        height={520}
       />
     </div>
   );
