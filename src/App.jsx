@@ -36,7 +36,7 @@ export const App = () => {
 
   const pieSeries = [
     {
-      series: [44, 55, 13, 43, 22],
+      series: { data: [44, 55, 13, 43, 22] },
     },
   ];
 
