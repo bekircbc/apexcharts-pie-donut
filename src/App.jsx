@@ -3,25 +3,25 @@ import { useState, useEffect } from "react";
 
 export const App = () => {
   const [options, setOptions] = useState({});
-  const [series, setSeries] = useState({});
+  const [series, setSeries] = useState([]);
   const [type, setType] = useState("pie");
 
   useEffect(() => {
     setOptions({
-      chart: {
-        id: "apexchart-example",
-      },
       labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
-      legends: { position: "bottom" },
+      legend: { position: "bottom" },
       // xaxis: {
       //   categories: [
       //     2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,
       //     2022,
       //   ],
     });
-    setSeries({
-      series: [44, 55, 13, 43, 22],
-    });
+    setSeries([
+      {
+        name: "series",
+        data: [44, 55, 13, 43, 22],
+      },
+    ]);
 
     //   [
     //   {
