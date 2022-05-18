@@ -10,6 +10,8 @@ export const App = () => {
   const lineOptions = {
     chart: {
       id: "apexchart-example",
+      stacked: true,
+      background: "#f1f7fd",
     },
     xaxis: {
       categories: [
@@ -36,7 +38,7 @@ export const App = () => {
 
   const pieSeries = [
     {
-      series: { data: [44, 55, 13, 43, 22] },
+      series: [44, 55, 13, 43, 22],
     },
   ];
 
@@ -83,8 +85,8 @@ export const App = () => {
       </nav>
 
       <Chart
-        options={options}
         series={series}
+        options={options}
         type={type} //"bar","line", "donut","area", "radar", "histogram", "pie", "radialBar", scatter, bubble, heatmap, candlestick
         width={800}
         height={520}
